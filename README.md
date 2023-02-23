@@ -1,27 +1,29 @@
-# Comp584front
+# Comp584 Used car frontend project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
+### Introduction
 
-## Development server
+This project is a front angular project for class comp584.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This is a website showing information of used cars. First of all, we need a car Make. Under this Make, different model belongs to different Make. And different cars can be added under respective model.
 
-## Code scaffolding
+##### Such as
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Make: Toyota Model: Camry Car Info: 2007 Toyota Camry Solara SLE
 
-## Build
+# technology
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+##### Frontend : Angular.js
 
-## Running unit tests
+##### Backend : C#
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+##### Database: SQL Server
 
-## Running end-to-end tests
+# Link
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Frontend: <https://github.com/jackisapirate/comp584front> 
 
-## Further help
+Backend: <https://github.com/jackisapirate/comp584api> 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Project presentations: /
+
+Swagger2: /
