@@ -18,11 +18,22 @@ Make: Toyota Model: Camry Car Info: 2007 Toyota Camry Solara SLE
 
 ##### Database: SQL Server
 
+# Progress
+
++ At present, we have been able to use the "api/Account" interface to obtain tokens
++ Three tables "Make", "Model" and "Car" are created in my database.
++ I can use swagger to call and test these interfaces.
++ The Angular (front-end) project can display data information that is stored in the database.
+
 # Link
 
 Frontend: <https://github.com/jackisapirate/comp584front> 
 
-Backend: <https://github.com/jackisapirate/comp584api> 
+Backend: https://github.com/jackisapirate/comp584backend
+
+Backend-Controller:  [https://github.com/jackisapirate/comp584backend/tree/master/WorldCitiesApi](https://github.com/jackisapirate/comp584backend/tree/master/WorldCitiesApi)
+
+Backend-Model: [https://github.com/jackisapirate/comp584backend/tree/master/WorldModel](https://github.com/jackisapirate/comp584backend/tree/master/WorldModel)
 
 Project presentations: /
 
