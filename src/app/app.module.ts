@@ -16,6 +16,7 @@ import { MatButtonModule} from '@angular/material/button';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { MakeComponent } from './make/make.component';
 import { ModelComponent } from './model/model.component';
+import { CarComponent } from './car/car.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ModelComponent } from './model/model.component';
     FetchDataComponent,
     MakeComponent,
     ModelComponent,
+    CarComponent,
 
     
   ],

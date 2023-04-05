@@ -20,3 +20,25 @@ interface Make {
   date: string;
   name: string;
 }
+
+
+export class FetchDataComponent {
+
+  public forecasts: WeatherForecast[] = [];
+  baseUrl = 'https://localhost:7046/';
+  constructor(http: HttpClient) {
+      http.get<WeatherForecast[]>(this.baseUrl + 'Weatherforecast').subscribe(result => {
+          this.forecasts = result;
+      }, error => console.error(error));
+
+
+  }
+
+}
+
+interface WeatherForecast {
+  date: string;
+  temperatureC: number;
+  temperatureF: number;
+  summary: string;
+}

@@ -1,0 +1,28 @@
+<p>car works!</p>
+
+<p>This component demonstrates fetching Car List from the server.</p>
+
+<p *ngIf="!car"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Year</th>
+      <th>Price</th>
+      <th>Color</th>
+      <th>ModelId</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ car.id }}</td>
+      <td>{{ car.name }}</td>
+      <td>{{ car.year }}</td>
+      <td>{{ car.price }}</td>
+      <td>{{ car.color }}</td>
+      <td>{{ car.modelId }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { MakeComponent } from './make/make.component';
 import { ModelComponent } from './model/model.component';
+import { CarComponent } from './car/car.component';
 
 const routes: Routes = [
 
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'fetch-data', component: FetchDataComponent },
   { path: 'make', component: MakeComponent },
   { path: 'model', component: ModelComponent },
+  { path: 'car', component: CarComponent },
 ];
 
 @NgModule({
