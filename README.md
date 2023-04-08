@@ -24,6 +24,7 @@ Make: Toyota Model: Camry Car Info: 2007 Toyota Camry Solara SLE
 + Three tables "Make", "Model" and "Car" are created in my database.
 + I can use swagger to call and test these interfaces.
 + The Angular (front-end) project can display data information that is stored in the database.
++ We added Authentication Middleware. (2023/04/07)
 
 # Link
 
