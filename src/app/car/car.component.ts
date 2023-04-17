@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../environment/environment';
+import { Car } from './car';
 
 @Component({
   selector: 'app-car',
@@ -8,29 +10,25 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class CarComponent {
-  
-  public car: Car = {
-    id: "",
-    name: "",
-    year: "",
-    price: 0,
-    color: "",
-    modelId: 1,
+  public cars: Car[] = []
+  // public car: Car = {
+  //   id: "",
+  //   name: "",
+  //   year: "",
+  //   price: 0,
+  //   color: "",
+  //   modelId: 1,
 
-  };
+  // };
   baseUrl = 'https://localhost:7104/api/';
+
   constructor(http: HttpClient) {
-      http.get<Car>(this.baseUrl + 'Cars/4').subscribe(result => {
-          this.car = result;
+      console.log("environment:");
+      console.log(environment.baseUrl);
+
+      http.get<Car[]>(environment.baseUrl + 'api/Cars').subscribe(result => {
+          this.cars = result;
       }, error => console.error(error));
   }
 }
 
-export interface Car {
-  id: string;
-  name: string;
-  year: string;
-  price: number;
-  color: string;
-  modelId: number;
-}
