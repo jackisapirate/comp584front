@@ -2,12 +2,12 @@
 
 <p>This component demonstrates fetching Car List from the server.</p>
 
-<p *ngIf="!car"><em>Loading...</em></p>
+<p *ngIf="!cars?.length"><em>Loading...</em></p>
 
-<table class='table table-striped' aria-labelledby="tableLabel">
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="cars.length">
   <thead>
     <tr>
-      <th>Id</th>
+      <th>id</th>
       <th>Name</th>
       <th>Year</th>
       <th>Price</th>
@@ -16,7 +16,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr *ngFor="let car of cars">
       <td>{{ car.id }}</td>
       <td>{{ car.name }}</td>
       <td>{{ car.year }}</td>
@@ -26,3 +26,10 @@
     </tr>
   </tbody>
 </table>
+
+<!-- //   id: "",
+//   name: "",
+//   year: "",
+//   price: 0,
+//   color: "",
+//   modelId: 1, -->

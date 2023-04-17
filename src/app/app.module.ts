@@ -10,13 +10,17 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule} from '@angular/material/icon';
+import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatButtonModule} from '@angular/material/button';
 
 // import { HttpModule } from '@angular/http';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MakeComponent } from './make/make.component';
 import { ModelComponent } from './model/model.component';
 import { CarComponent } from './car/car.component';
+import { LoginComponent } from './auth/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AuthInterceptor } from './auth/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,8 +32,7 @@ import { CarComponent } from './car/car.component';
     MakeComponent,
     ModelComponent,
     CarComponent,
-
-    
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,9 +41,17 @@ import { CarComponent } from './car/car.component';
     MatToolbarModule,
     MatIconModule,
     HttpClientModule,
-    // HttpClient,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatButtonModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

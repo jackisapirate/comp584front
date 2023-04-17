@@ -7,16 +7,18 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { MakeComponent } from './make/make.component';
 import { ModelComponent } from './model/model.component';
 import { CarComponent } from './car/car.component';
+import { LoginComponent } from './auth/login.component';
 
 const routes: Routes = [
 
-  // 从后台粘贴过来的
+
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'counter', component: CounterComponent },
   { path: 'fetch-data', component: FetchDataComponent },
   { path: 'make', component: MakeComponent },
   { path: 'model', component: ModelComponent },
   { path: 'car', component: CarComponent },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({
