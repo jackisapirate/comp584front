@@ -2,18 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Make } from './make.component';
 @Component({
-  selector: 'app-make',
-  templateUrl: './make.component.html',
-  styleUrls: ['./make.component.css']
+  selector: 'app-make-delete',
+  templateUrl: './make-delete.component.html',
+  styleUrls: ['./make-delete.component.css']
 })
-
-export class MakeComponent  implements OnInit {
-  public makes!: Make[];
+export class MakeDeleteComponent {
   constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) { }
   ngOnInit(): void {
-
-
     let idParam = this.activatedRoute.snapshot.paramMap.get('id');
     if(idParam!=null){
       let urlOrigin = environment.baseUrl + `api/Makes/${idParam}`;
@@ -22,17 +19,9 @@ export class MakeComponent  implements OnInit {
         // this.form.patchValue(this.make);
       });
     }
+    setTimeout(() => {
+      this.router.navigate(['/make']);
+    }, 300);
 
-      
-      this.http.get<Make[]>(environment.baseUrl + 'api/Makes').subscribe(result => {
-          this.makes = result;
-      }, error => console.error(error));
   }
-}
-
-export interface Make {
-  id: number,
-  name: string;
-  country: string;
-  description: string;
 }

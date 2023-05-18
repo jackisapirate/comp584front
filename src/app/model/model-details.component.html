@@ -1,0 +1,23 @@
+<p>model-details works!</p>
+<h1>The following table counts the sales and number of all cars under this model!</h1>
+<h1><a  [routerLink]="['/model']">Back</a></h1>
+<table class='table table-striped' aria-labelledby="tableLabel" [hidden]="!modelDto" border="1" cellspacing="0" cellpadding="0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Model Name</th>
+        <th>Sales</th>
+        <th>Description</th>
+        <th>Amount of Sub-Cars</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{modelDto.id}}</td>
+        <td>{{ modelDto.name}}</td>
+        <td>{{ modelDto.sales }}</td>
+        <td>{{ modelDto.description }}</td>
+        <td><span style="color:red"><b>{{ modelDto.countingNum }}</b></span></td>
+      </tr>
+    </tbody>
+</table>

@@ -1,0 +1,46 @@
+<p>caradd works!</p>
+
+<div class="car-add">
+    <h1>Add a new One!</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+          <mat-label>Model:</mat-label>
+          <mat-select formControlName="modelId">
+            <mat-option matInput *ngFor="let model of models" value="{{model.id}}">{{model.name}}</mat-option>
+          </mat-select>
+      </mat-form-field>
+      <!-- Name -->
+      <mat-form-field>
+        <mat-label>Name:</mat-label>
+        <input matInput formControlName="name" placeholder="Type a name">
+      </mat-form-field>
+      <!-- year -->
+      <mat-form-field>
+        <mat-label>
+          Year:
+        </mat-label>
+        <input matInput formControlName="year" placeholder="Country of the Car">
+      </mat-form-field>
+      <!-- price -->
+      <mat-form-field>
+        <mat-label>
+          Price
+        </mat-label>
+        <input matInput formControlName="price" placeholder="Description of the car">
+      </mat-form-field>
+        <!-- color -->
+        <mat-form-field>
+            <mat-label>
+                color
+            </mat-label>
+            <input matInput formControlName="color" placeholder="Description of the car">
+            </mat-form-field>
+      <div>
+        <button mat-flat-button color="primary" type="submit">Save
+        </button>
+        <button mat-flat-button color="secondary" [routerLink]="['/car']">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>

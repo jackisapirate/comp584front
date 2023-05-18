@@ -1,20 +1,28 @@
-<h1 id="tableLabel">Make list</h1>
+<h1>Makes</h1>
+<p>Here's a list of makes: feel free to play with it.</p>
+<h1><a [routerLink]="['/makeadd']">New</a></h1>
 
-<p>This component demonstrates fetching Make List from the server.</p>
-
-<p *ngIf="!makes?.length"><em>Loading...</em></p>
-
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="makes.length">
+<table class='table table-striped' aria-labelledby="tableLabel" [hidden]="!makes">
   <thead>
     <tr>
-      <th>Date</th>
-      <th>MakeName</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Country</th>
+      <th>Description</th>
+      <th>View</th>
+      <th>Update</th>
+      <th>Delete</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let forecast of makes">
-      <td>{{ forecast.date }}</td>
-      <td>{{ forecast.name }}</td>
+    <tr *ngFor="let make of makes">
+      <td>{{make.id}}</td>
+      <td>{{ make.name}}</td>
+      <td>{{ make.country }}</td>
+      <td>{{ make.description }}</td>
+      <td><a [routerLink]="['/makedetails', make.id]">View</a></td>
+      <td><a [routerLink]="['/makeedit', make.id]">Update</a></td>
+      <td><a [routerLink]="['/makedelete', make.id]">Delete</a></td>
     </tr>
   </tbody>
 </table>

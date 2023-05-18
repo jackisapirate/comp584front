@@ -1,0 +1,40 @@
+<p>caredit works!</p>
+<div class="car-edit">
+    <h1>Edit</h1>
+    <p *ngIf="this.id && !car"><em>Loading...</em></p>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <!-- Name -->
+      <mat-form-field>
+        <mat-label>Name:</mat-label>
+        <input matInput formControlName="name" placeholder="car name">
+      </mat-form-field>
+      <!-- Year -->
+      <mat-form-field>
+        <mat-label>
+          Year:
+        </mat-label>
+        <input matInput formControlName="year" placeholder="year">
+      </mat-form-field>
+      <!-- Price -->
+      <mat-form-field>
+        <mat-label>
+          Price
+        </mat-label>
+        <input matInput formControlName="price" placeholder="Price of the car">
+      </mat-form-field>
+      <!-- Color -->
+      <mat-form-field>
+        <mat-label>
+            Color
+        </mat-label>
+        <input matInput formControlName="color" placeholder="Price of the car">
+      </mat-form-field>
+      <div>
+        <button mat-flat-button color="primary" type="submit">Save1
+        </button>
+        <button mat-flat-button color="secondary" [routerLink]="['/car']">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>

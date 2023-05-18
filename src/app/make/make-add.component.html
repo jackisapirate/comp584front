@@ -1,0 +1,33 @@
+<p>make-add works!</p>
+
+<div class="make-add">
+    <h1>Add a new One!</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <!-- Name -->
+      <mat-form-field>
+        <mat-label>Name:</mat-label>
+        <input matInput formControlName="name" placeholder="Type a name">
+      </mat-form-field>
+      <!-- ISO2 -->
+      <mat-form-field>
+        <mat-label>
+          Country:
+        </mat-label>
+        <input matInput formControlName="country" placeholder="Country of the Make">
+      </mat-form-field>
+      <!-- ISO3 -->
+      <mat-form-field>
+        <mat-label>
+          Description
+        </mat-label>
+        <input matInput formControlName="description" placeholder="Description of the make">
+      </mat-form-field>
+      <div>
+        <button mat-flat-button color="primary" type="submit">Save
+        </button>
+        <button mat-flat-button color="secondary" [routerLink]="['/make']">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>

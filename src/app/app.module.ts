@@ -21,6 +21,26 @@ import { CarComponent } from './car/car.component';
 import { LoginComponent } from './auth/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { CountryPopulationComponent } from './countries/country-population.component';
+import { CountriesComponent } from './countries/countries.component';
+import { CountryEditComponent } from './countries/country-edit.component';
+import { MatInputModule } from "@angular/material/input";
+import { MakeEditComponent } from './make/make-edit.component';
+import { MakeAddComponent } from './make/make-add.component';
+import { MakeDeleteComponent } from './make/make-delete.component';
+import { DetailsComponent } from './make/details.component';
+import { ModelEditComponent } from './model/model-edit.component';
+import { ModelAddComponent } from './model/model-add.component';
+import { ModelDeleteComponent } from './model/model-delete.component';
+import { ModelDetailsComponent } from './model/model-details.component';
+
+import { MatOptionModule } from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import { CareditComponent } from './car/caredit.component';
+import { CardeleteComponent } from './car/cardelete.component';
+import { CaraddComponent } from './car/caradd.component';
+
+
 
 @NgModule({
   declarations: [
@@ -33,6 +53,20 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     ModelComponent,
     CarComponent,
     LoginComponent,
+    CountriesComponent,
+    CountryPopulationComponent,
+    CountryEditComponent,
+    MakeEditComponent,
+    MakeAddComponent,
+    MakeDeleteComponent,
+    DetailsComponent,
+    ModelEditComponent,
+    ModelAddComponent,
+    ModelDeleteComponent,
+    ModelDetailsComponent,
+    CareditComponent,
+    CardeleteComponent,
+    CaraddComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +78,9 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatButtonModule,
+    MatInputModule,
+    MatOptionModule,
+    MatSelectModule
   ],
   providers: [
     {

@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { LoginRequest } from './login-request';
 
 import { LoginResult } from './login-result';
-import { environment } from '../environment/environment';
-import { Observable, Subject } from 'rxjs';
+import { environment } from '../../environments/environment';
+import { Observable, Subject, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -38,9 +38,17 @@ export class AuthService {
 
   login(item: LoginRequest): Observable<LoginResult> {
     var url = environment.baseUrl + 'api/Account';
-    return this.http.post<LoginResult>(url, item);
+    return this.http.post<LoginResult>(url, item).pipe(tap((_loginResult: LoginResult) =>{
+        if(_loginResult.success && _loginResult.token){
+          localStorage.setItem(this.tokenKey, _loginResult.token);
+          this.setAuthStatus(true);
+        }
+    }));
   }
+
+
   logout(){
     localStorage.removeItem(this.tokenKey);
+    this.setAuthStatus(false);
   }
 }

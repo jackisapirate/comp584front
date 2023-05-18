@@ -1,0 +1,25 @@
+<p>Make and sub-details works!</p>
+<h1>The following table counts the sales and number of all models under the brand: <span style="color:red"><b>{{makesDto.name}}</b></span></h1>
+<h1><a  [routerLink]="['/make']">Back</a></h1>
+<table class='table table-striped' aria-labelledby="tableLabel" [hidden]="!makesDto" border="1" cellspacing="0" cellpadding="0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Make Name</th>
+        <th>Country</th>
+        <th>Description</th>
+        <th>Total Sales</th>
+        <th>Amount of Sub-Models</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{makesDto.id}}</td>
+        <td>{{ makesDto.name}}</td>
+        <td>{{ makesDto.country }}</td>
+        <td>{{ makesDto.description }}</td>
+        <td><span style="color:red"><b>{{ makesDto.sumsales }}</b></span></td>
+        <td><span style="color:red"><b>{{ makesDto.countingNum }}</b></span></td>
+      </tr>
+    </tbody>
+  </table>

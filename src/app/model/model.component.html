@@ -1,1 +1,28 @@
-<p>model works!</p>
+<h1>Model works!</h1>
+<p>Here's a list of model: feel free to play with it.</p>
+<h1><a [routerLink]="['/modeladd']">New</a></h1>
+
+<table class='table table-striped' aria-labelledby="tableLabel" [hidden]="!models">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Sales</th>
+      <th>Description</th>
+      <th>View</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let model of models">
+      <td>{{model.id}}</td>
+      <td>{{ model.name}}</td>
+      <td>{{ model.sales }}</td>
+      <td>{{ model.description }}</td>
+      <td><a [routerLink]="['/modeldetails', model.id]">View</a></td>
+      <td><a [routerLink]="['/modeledit', model.id]">Update</a></td>
+      <td><a [routerLink]="['/modeldelete', model.id]">Delete</a></td>
+    </tr>
+  </tbody>
+</table>

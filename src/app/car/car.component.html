@@ -1,7 +1,7 @@
 <p>car works!</p>
 
 <p>This component demonstrates fetching Car List from the server.</p>
-
+<h1><a [routerLink]="['/caradd']">New</a></h1>
 <p *ngIf="!cars?.length"><em>Loading...</em></p>
 
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="cars.length">
@@ -12,7 +12,8 @@
       <th>Year</th>
       <th>Price</th>
       <th>Color</th>
-      <th>ModelId</th>
+      <th>Update</th>
+      <th>Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -22,7 +23,8 @@
       <td>{{ car.year }}</td>
       <td>{{ car.price }}</td>
       <td>{{ car.color }}</td>
-      <td>{{ car.modelId }}</td>
+      <td><a [routerLink]="['/caredit', car.id]">Update</a></td>
+      <td><a [routerLink]="['/cardelete', car.id]">Delete</a></td>
     </tr>
   </tbody>
 </table>
