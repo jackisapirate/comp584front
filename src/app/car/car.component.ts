@@ -10,22 +10,11 @@ import { Car } from './car';
 })
 
 export class CarComponent {
-  public cars: Car[] = []
-  // public car: Car = {
-  //   id: "",
-  //   name: "",
-  //   year: "",
-  //   price: 0,
-  //   color: "",
-  //   modelId: 1,
-
-  // };
-  baseUrl = 'https://localhost:7104/api/';
-
+  public cars: Car[] = [];
+  showFlag: boolean = false;
+  // localStorage.getItem(this.authService.roleKey);
   constructor(http: HttpClient) {
-      console.log("environment:");
-      console.log(environment.baseUrl);
-
+    this.showFlag = localStorage.getItem(environment.roleKey) == environment.role;
       http.get<Car[]>(environment.baseUrl + 'api/Cars').subscribe(result => {
           this.cars = result;
       }, error => console.error(error));

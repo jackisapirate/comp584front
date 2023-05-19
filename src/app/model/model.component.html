@@ -1,6 +1,6 @@
 <h1>Model works!</h1>
 <p>Here's a list of model: feel free to play with it.</p>
-<h1><a [routerLink]="['/modeladd']">New</a></h1>
+<h1 *ngIf="showFlag"><a [routerLink]="['/modeladd']">New</a></h1>
 
 <table class='table table-striped' aria-labelledby="tableLabel" [hidden]="!models">
   <thead>
@@ -10,8 +10,8 @@
       <th>Sales</th>
       <th>Description</th>
       <th>View</th>
-      <th>Update</th>
-      <th>Delete</th>
+      <th *ngIf="showFlag">Update</th>
+      <th *ngIf="showFlag">Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -21,8 +21,8 @@
       <td>{{ model.sales }}</td>
       <td>{{ model.description }}</td>
       <td><a [routerLink]="['/modeldetails', model.id]">View</a></td>
-      <td><a [routerLink]="['/modeledit', model.id]">Update</a></td>
-      <td><a [routerLink]="['/modeldelete', model.id]">Delete</a></td>
+      <td *ngIf="showFlag"><a [routerLink]="['/modeledit', model.id]">Update</a></td>
+      <td *ngIf="showFlag"><a [routerLink]="['/modeldelete', model.id]">Delete</a></td>
     </tr>
   </tbody>
 </table>

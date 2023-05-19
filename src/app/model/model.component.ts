@@ -9,7 +9,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ModelComponent {
   public models!: Model[];
-  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) { }
+  showFlag: boolean = false;
+  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) { 
+    this.showFlag = localStorage.getItem(environment.roleKey) == environment.role;
+  }
   ngOnInit(): void {
 
 

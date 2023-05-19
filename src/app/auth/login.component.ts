@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit{
         this.loginResult = result;
         if (result.success) {
           localStorage.setItem(this.authService.tokenKey, result.token);
+          localStorage.setItem(this.authService.roleKey, result.message);
           this.router.navigate(["/"]);
         }
       },

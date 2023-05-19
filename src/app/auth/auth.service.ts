@@ -14,6 +14,7 @@ export class AuthService {
 
   constructor(protected http: HttpClient) { }
   tokenKey: string = "jwt-token";
+  roleKey: string = "jwt-role";
   private _authStatus = new Subject<boolean>();
 
   public authStatus = this._authStatus.asObservable();
@@ -36,11 +37,16 @@ export class AuthService {
     return localStorage.getItem(this.tokenKey);
   }
 
+  getRole(): string | null {
+    return localStorage.getItem(this.roleKey);
+  }
+
   login(item: LoginRequest): Observable<LoginResult> {
     var url = environment.baseUrl + 'api/Account';
     return this.http.post<LoginResult>(url, item).pipe(tap((_loginResult: LoginResult) =>{
         if(_loginResult.success && _loginResult.token){
           localStorage.setItem(this.tokenKey, _loginResult.token);
+          localStorage.setItem(this.roleKey, _loginResult.message);
           this.setAuthStatus(true);
         }
     }));
@@ -49,6 +55,7 @@ export class AuthService {
 
   logout(){
     localStorage.removeItem(this.tokenKey);
+    localStorage.removeItem(this.roleKey);
     this.setAuthStatus(false);
   }
 }
