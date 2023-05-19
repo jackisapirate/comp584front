@@ -24,9 +24,6 @@ export class ModelDeleteComponent {
         // this.model = result;
         // this.form.patchValue(this.model);
         this.apiresponse = result;
-        console.log(this.apiresponse);
-        console.log(this.apiresponse.status);
-        console.log(this.apiresponse.message);
         if(this.apiresponse.status != 200){
           alert(this.apiresponse.message);
         }
